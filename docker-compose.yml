@@ -9,20 +9,24 @@ services:
     command: python -m celery worker --app="projekt.celery:app" --workdir=/projekt --queues projekt-queue --loglevel=INFO
     depends_on:
       - redis
+    volumes:
+      - ./projekt:/projekt
     container_name: celeryworker
   celerybeat:
     build: .
     command: celery beat --app="projekt.celery:app" --workdir=/
     depends_on:
       - redis
+    volumes:
+      - ./projekt:/projekt
     container_name: celerybeat
-  flower:  
+  flower:
     image: mher/flower
     environment:
       - CELERY_BROKER_URL=redis://redis:6379/
       - FLOWER_PORT=8888
     depends_on:
       - redis
-    ports:  
+    ports:
       - 8888:8888
     container_name: flower
