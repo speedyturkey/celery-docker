@@ -12,12 +12,13 @@ def get_result_backend_uri():
     return f"db+postgresql://{user}:{quote_plus(password)}@{host}:{port}/{database}"
 
 
-broker_url = 'redis://redis'
 # Optional configuration, see the application user guide.
-
-imports = ['application.reports.samples']
+broker_url = 'redis://redis'
 task_default_queue = 'celery-docker-queue'
 task_soft_time_limit = 10 * 60
 result_backend = get_result_backend_uri()
 result_expires = None
 result_extended = True
+imports = [
+    'application.reports.samples'
+]

@@ -10,12 +10,6 @@ COPY requirements.txt /
 RUN pip install -r /requirements.txt
 RUN apk del .build-deps
 
-# create celery user/group and set perms
-RUN addgroup -S celery
-RUN adduser -S celery -s /bin/sh -G celery
-RUN mkdir /var/log/celery /var/run/celery
-RUN chown -R celery:celery /var/run/celery/ /var/log/celery/
-
 RUN echo "vm.overcommit_memory = 1" >> /etc/sysctl.conf
 
 ARG SSH_PRIVATE_KEY

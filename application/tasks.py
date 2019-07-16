@@ -1,8 +1,7 @@
 from celery.schedules import crontab
-from porthole import QueryExecutor, ConnectionManager
+from porthole import ConnectionManager
 from porthole.alerts import Alert
 from porthole.components import RecipientsChecker
-from application.reports import samples
 
 
 def get_manifest():
