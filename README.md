@@ -42,8 +42,8 @@ Here is an overview of the application structure.
     ├── .gitignore              # Standard .gitignore
     ├── docker-compose.yml      # Defines your docker containers.
     ├── dockerfile              # Builds your base docker image. 
-    └── README.md               # This document!
-
+    ├── README.md               # This document!
+    └── requirements.txt        # Used to install Python dependencies into the docker containers.
 
 
 
