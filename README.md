@@ -1,6 +1,7 @@
 ## Generic Dockerized Celery App
 
 This repo contains a bare bones implemenation of a scheduled reporting application using Porthole, Celery, and Docker.
+The application contains 3 tasks, each scheduled to run once per minute and print a statement to the console. 
 
 ### Get Started
 
