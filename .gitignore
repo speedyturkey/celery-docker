@@ -1,0 +1,9 @@
+config.ini
+porthole.ini
+alembic.ini
+.env
+*.zip
+*.pyc
+*.xlsx
+*.log
+.idea/*
